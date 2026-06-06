@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>URCHY COLLECTIONS | Import/Export Experts – Global Trade 24/7</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #fef9f0 0%, #f4f7fc 100%);
+      color: #1e293b;
+      line-height: 1.5;
+      padding-bottom: 2rem;
+      scroll-behavior: smooth;
+    }
+
+    .hero-glow {
+      background: radial-gradient(circle at 10% 20%, rgba(255,215,130,0.2), rgba(200,230,255,0.1));
+      position: relative;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.2rem 1rem 2rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(0px);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      margin-bottom: 1.6rem;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .rating-star {
+      color: #fbbf24;
+    }
+
+    .open-badge {
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      animation: gentlePulse 2s infinite;
+    }
+
+    @keyframes gentlePulse {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.3);}
+      70% { box-shadow: 0 0 0 6px rgba(34,197,94,0);}
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0);}
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .btn {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #f1f5f9;
+      padding: 0.85rem 0;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: #1e293b;
+      font-family: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn:active {
+      transform: scale(0.96);
+    }
+    .btn-primary {
+      background: #0f172a;
+      color: white;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.2);
+    }
+    .btn-primary i {
+      color: #facc15;
+    }
+    .btn-primary:hover {
+      background: #1e293b;
+      transform: scale(1.02);
+    }
+    .btn-outline {
+      background: white;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .btn-outline:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+      transform: translateY(-2px);
+    }
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      border: none;
+    }
+    .whatsapp-btn i {
+      color: white;
+    }
+
+    .distance {
+      font-size: 0.8rem;
+      color: #475569;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .map-container {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      margin: 1rem 0 0.8rem;
+      height: 190px;
+      background: #cbd5e1;
+      transition: all 0.2s;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .review-quote {
+      background: #fffbeb;
+      padding: 1rem;
+      border-radius: 1.5rem;
+      margin: 1rem 0 0.2rem;
+      border-left: 6px solid #f59e0b;
+      transition: 0.2s;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #0f172a, #334155);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f1f5f9;
+      padding: 0.8rem 1rem;
+      border-radius: 1.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .phone-number {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: #1e293b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      z-index: 1000;
+      white-space: nowrap;
+      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stat-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 1rem 0;
+    }
+    .stat-item {
+      background: #fef9e8;
+      padding: 0.7rem;
+      border-radius: 1.2rem;
+      text-align: center;
+      flex: 1;
+      font-weight: 700;
+    }
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #b45309;
+    }
+
+    .floating-icon {
+      animation: float 3s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .cta-banner {
+      background: linear-gradient(115deg, #0f172a 0%, #1e2a44 100%);
+      color: white;
+      border-radius: 1.8rem;
+      padding: 1rem 1.2rem;
+      text-align: center;
+    }
+    .cta-banner a {
+      background: #facc15;
+      color: #0f172a;
+      padding: 10px 18px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 800;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+    .cta-banner a:hover {
+      background: #ffde5c;
+      transform: scale(1.02);
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 1rem 0.85rem;
+      }
+      .stat-number {
+        font-size: 1.2rem;
+      }
+    }
+    .wave-separator {
+      text-align: center;
+      font-size: 1.2rem;
+      letter-spacing: 6px;
+      color: #cbd5e1;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container hero-glow">
+  
+  <!-- Header Card -->
+  <div class="card" style="background: linear-gradient(145deg, #ffffff, #fefaf5);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+      <div>
+        <h1 style="font-size: 1.9rem; font-weight: 800; letter-spacing: -0.5px; background: linear-gradient(120deg, #0f172a, #2d4a6e); -webkit-background-clip: text; background-clip: text; color: transparent;">
+          URCHY <br>COLLECTIONS/<wbr>IMPORTS
+        </h1>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 6px;">
+          <span class="badge"><i class="fas fa-star rating-star floating-icon"></i> 5.0 ★ (1 review)</span>
+          <span class="badge open-badge"><i class="fas fa-clock"></i> Open 24 hours · Always ready</span>
+        </div>
+        <div class="distance">
+          <i class="fas fa-location-dot" style="color:#f59e0b;"></i> Absu, Uturu 441108, Abia · 7.0 km
+        </div>
+      </div>
+      <div style="background:#f1f5f9; border-radius: 60px; padding: 8px 14px; font-weight: 700;">
+        <i class="fas fa-ship" style="color:#0f172a;"></i> <span>Import/Export</span>
+      </div>
+    </div>
+    <div class="btn-group">
+      <a href="tel:09023962118" class="btn btn-primary"><i class="fas fa-phone-alt fa-shake"></i> Call now</a>
+      <a href="sms:09023962118?body=Hello%20URCHY%20COLLECTIONS,%20I'm%20interested%20in%20import/export%20services" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Text</a>
+      <a href="#" id="directionsBtn" class="btn btn-outline"><i class="fas fa-directions"></i> Route</a>
+    </div>
+    <div class="btn-group">
+      <button id="shareBtn" class="btn btn-outline"><i class="fas fa-share-alt"></i> Share</button>
+      <button id="saveBtn" class="btn btn-outline"><i class="far fa-bookmark"></i> Save</button>
+      <a href="https://wa.me/2349023962118?text=Hello%20URCHY%20COLLECTIONS,%20I%20need%20import/export%20assistance!" class="btn whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Overview with stats -->
+  <div class="card">
+    <h2><i class="fas fa-globe-americas floating-icon"></i> Global Trade, Local Trust</h2>
+    <p style="margin-bottom: 1rem; font-size: 1rem;">URCHY COLLECTIONS/IMPORTS delivers <strong>fast & transparent logistics</strong> across continents. From sourcing to customs clearance, we move your business forward — 24/7, 365 days.</p>
+    <div class="stat-grid">
+      <div class="stat-item"><span class="stat-number">✅ 100%</span><br>On-time delivery</div>
+      <div class="stat-item"><span class="stat-number">🌍 30+</span><br>Global partners</div>
+      <div class="stat-item"><span class="stat-number">⚡ 24/7</span><br>Support</div>
+    </div>
+    <div class="service-tags">
+      <span class="badge"><i class="fas fa-check-circle" style="color:#10b981;"></i> Air & Sea Freight</span>
+      <span class="badge"><i class="fas fa-check-circle" style="color:#10b981;"></i> Customs Brokerage</span>
+      <span class="badge"><i class="fas fa-check-circle" style="color:#10b981;"></i> Warehouse to Door</span>
+    </div>
+  </div>
+
+  <!-- "What our clients say" – no name, just the text -->
+  <div class="card">
+    <h3><i class="fas fa-star" style="color:#facc15;"></i> What our clients say</h3>
+    <div class="review-quote">
+      <!-- No avatar, no person name – only the testimonial text -->
+      <div style="margin-bottom: 8px;">
+        <span style="font-size: 1rem; letter-spacing: 2px;">
+          <i class="fas fa-star" style="color:#facc15;"></i>
+          <i class="fas fa-star" style="color:#facc15;"></i>
+          <i class="fas fa-star" style="color:#facc15;"></i>
+          <i class="fas fa-star" style="color:#facc15;"></i>
+          <i class="fas fa-star" style="color:#facc15;"></i>
+        </span>
+      </div>
+      <p style="font-style: italic; font-weight: 500; font-size: 1rem;">“Fast, reliable, and truly professional. They handled our entire export process with care – documentation, shipping, everything. Highly recommended for any import/export needs.”</p>
+      <div style="font-size: 0.7rem; color:#6b7280; margin-top: 12px;">⭐ 5.0 average rating · Based on customer feedback</div>
+    </div>
+    <p style="margin-top: 12px;"><i class="fas fa-thumbs-up"></i> <strong>Join our growing list of satisfied clients</strong> — contact us today for a free consultation.</p>
+  </div>
+
+  <!-- Map & contact -->
+  <div class="card">
+    <h3><i class="fas fa-map-marked-alt floating-icon"></i> Find us in Abia</h3>
+    <div class="map-container">
+      <iframe src="https://maps.google.com/maps?q=Absu+Uturu+Abia+441108&t=&z=14&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="contact-row">
+      <span><i class="fas fa-phone-alt fa-fw"></i> 24/7 Hotline</span>
+      <span class="phone-number"><i class="fas fa-phone"></i> 0902 396 2118</span>
+      <a href="tel:09023962118" style="background:#0f172a; padding:6px 14px; border-radius: 60px; color:white; text-decoration:none; font-weight:600; font-size:0.8rem;">Call</a>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 14px;">
+      <div><i class="fas fa-location-dot" style="color:#f97316;"></i> Absu, Uturu 441108, Abia</div>
+      <div><i class="fas fa-hourglass-half"></i> Open 24 hours · Night & day</div>
+    </div>
+    <button id="getDirectionsMapBtn" class="btn btn-primary" style="margin-top: 18px; width:100%; background:#d97706; color:white;"><i class="fas fa-directions"></i> Get directions (live map)</button>
+  </div>
+
+  <!-- CTA banner -->
+  <div class="cta-banner">
+    <i class="fas fa-shipping-fast fa-2x" style="color:#facc15;"></i>
+    <h3 style="color:white; margin: 4px 0;">Ready to expand globally?</h3>
+    <p style="margin-bottom: 8px;">Request a free quote in minutes</p>
+    <a href="tel:09023962118"><i class="fas fa-phone-alt"></i> Call now · 24/7</a>
+    <span style="display: block; font-size: 0.7rem; margin-top: 8px;">✔️ No hidden fees ✔️ Fast response</span>
+  </div>
+
+  <!-- Additional trust signals -->
+  <div class="card" style="background: #eef2ff; text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <span><i class="fas fa-shield-alt" style="color:#2563eb;"></i> Secure & insured shipments</span>
+      <span><i class="fas fa-clock"></i> 24/7 customer care</span>
+      <span><i class="fas fa-chart-line"></i> Competitive rates</span>
+    </div>
+    <div class="wave-separator">✦ ✦ ✦</div>
+    <p style="font-size: 0.8rem;">Over 5 years of excellence in import/export | Trusted by Nigerian & international partners</p>
+  </div>
+
+  <div class="footer-note">
+    <i class="far fa-copyright"></i> URCHY COLLECTIONS/IMPORTS — Your Gateway to Global Markets<br>
+    📍 Absu, Uturu 441108, Abia · 📞 0902 396 2118 · ✉️ urchycollections@example.com
+  </div>
+</div>
+
+<div id="toastMsg" class="toast-msg"></div>
+
+<script>
+  function showToast(message, duration = 2200) {
+    const toast = document.getElementById('toastMsg');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, duration);
+  }
+
+  // Share button
+  const shareBtn = document.getElementById('shareBtn');
+  shareBtn.addEventListener('click', async () => {
+    const data = {
+      title: 'URCHY COLLECTIONS/IMPORTS',
+      text: '🚢 5-star Import/Export company in Abia. Open 24/7! Fast, reliable global trade solutions.',
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(data);
+        showToast('📢 Shared successfully!');
+      } catch (e) {
+        if (e.name !== 'AbortError') showToast('Could not share', 1500);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        showToast('🔗 Link copied! Share anywhere.');
+      } catch (err) {
+        showToast('Copy link manually', 1500);
+      }
+    }
+  });
+
+  // Save/unsave
+  const saveBtn = document.getElementById('saveBtn');
+  let saved = localStorage.getItem('urchy_saved_lively') === 'true';
+  if (saved) {
+    saveBtn.innerHTML = '<i class="fas fa-bookmark"></i> Saved ✓';
+    saveBtn.style.background = "#e0f2e9";
+    saveBtn.style.borderColor = "#10b981";
+  }
+  saveBtn.addEventListener('click', () => {
+    if (!saved) {
+      localStorage.setItem('urchy_saved_lively', 'true');
+      saved = true;
+      saveBtn.innerHTML = '<i class="fas fa-bookmark"></i> Saved ✓';
+      saveBtn.style.background = "#e0f2e9";
+      saveBtn.style.borderColor = "#10b981";
+      showToast('💼 URCHY added to saved businesses');
+    } else {
+      localStorage.removeItem('urchy_saved_lively');
+      saved = false;
+      saveBtn.innerHTML = '<i class="far fa-bookmark"></i> Save';
+      saveBtn.style.background = "";
+      saveBtn.style.borderColor = "";
+      showToast('Removed from saved');
+    }
+  });
+
+  // Directions handler
+  const dest = encodeURIComponent("URCHY COLLECTIONS/IMPORTS, Absu, Uturu 441108, Abia, Nigeria");
+  const directionsBtn = document.getElementById('directionsBtn');
+  const mapDirBtn = document.getElementById('getDirectionsMapBtn');
+  function openMapsDir() {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${dest}&travelmode=driving`;
+    window.open(url, '_blank');
+  }
+  directionsBtn.addEventListener('click', (e) => { e.preventDefault(); openMapsDir(); });
+  mapDirBtn.addEventListener('click', () => openMapsDir());
+
+  const callButtons = document.querySelectorAll('a[href^="tel:"]');
+  callButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showToast("📞 Connecting you to URCHY COLLECTIONS...", 1500);
+    });
+  });
+
+  const waBtn = document.querySelector('.whatsapp-btn');
+  if (waBtn) {
+    waBtn.addEventListener('click', () => showToast("💬 WhatsApp chat will open", 1200));
+  }
+</script>
+</body>
+</html>
